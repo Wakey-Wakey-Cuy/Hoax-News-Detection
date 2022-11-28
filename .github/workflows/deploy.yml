@@ -41,7 +41,3 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           # GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }} # will be used in the future
         run: |
-          git config --local user.email "mdswa@zxce3.net"
-          git config --local user.name "Mandakara Sadewa"
-          mkdocs gh-deploy --force
-          mkdocs --version
