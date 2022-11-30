@@ -13,7 +13,10 @@
   >
     <!-- Title Start -->
     <h1 class="mb-3" style="text-align: center">
-      <b> Is the news article<span style="color: #606c38"> fake news?</span></b>
+      <b>
+        Is {{ article_title }},
+        <span style="color: #606c38"> is a Hoax news?</span></b
+      >
     </h1>
     <p class="lead mb-5" style="text-align: center">
       Disclaimer: The machine learning model does not have 100% accuracy. Please
@@ -45,7 +48,13 @@
         </p>
         <p class="lead mb-0" style="text-align: justify">
           <b>Summary: </b>{{text|truncate() }}
-          <a class="text-reset " href="{{ url }}" target="_blank">selengkapnya</a>
+          <a
+            class="text-reset"
+            href="{{ url }}"
+            target="_blank"
+            style="color: #606c38"
+            >selengkapnya</a
+          >
         </p>
         {% endif %}
         <h4 style="text-align: center" class="verdict">
