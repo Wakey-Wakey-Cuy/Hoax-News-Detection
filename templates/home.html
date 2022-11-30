@@ -13,25 +13,25 @@
           <h1 class="display-3 text-center mb-3">HOAX NEWS DETECTION</h1>
         </div>
         <br /><br /><br /><br /><br />
+        {% if error %}
+        <div class="alert alert-warning" role="alert">
+          {{ error }}
+        </div>
+        {% endif %}
         <!-- Form Input Start -->
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <div class="d-flex justify-content-center">
-            <form id="form">
+            <form action="/result" id="form" method="POST"> 
               <div class="input-group input-group-lg mb-3">
-                <input
-                  class="form-control input-diff"
-                  placeholder="Input the News URL"
-                  type="text"
-                  name="url"
-                  required="required"
-                  id="input-news"
-                />
+                <input class="form-control input-diff" placeholder="Input the News URL" type="url" name="url"  id="input-news" autofocus>
                 <!-- Take Url Start -->
                 <div class="input-group-append">
                   <!-- <input class="btn btn-primary btn-block btn-large predict-btn" style="height:3rem; border-radius:15px; margin-left: -30px; border:none; z-index:10;" value="{{request.form.url}} type="submit" id="button-addon2" value="Submit"></input> -->
                   <button
                     class="btn btn-block btn-large predict-btn text-white"
                     id="button-addon2"
+                    type="submit"
+                    name="submit"
                   >
                     <i class="fas fa-search"></i>
                   </button>
