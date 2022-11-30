@@ -38,13 +38,14 @@
           <b>Invalid: Please check your URL again</b>
         </h4>
         {% else %}
-        <img src="{{" image }} class="card-img-top" alt="..." />
+        <img src="{{ image }}" class="card-img-top" alt="..." />
         <br />
         <p class="lead mb-3" style="text-align: justify">
           <b>Article Title: </b>{{ article_title }}
         </p>
         <p class="lead mb-0" style="text-align: justify">
-          <b>Summary: </b>{{text}}
+          <b>Summary: </b>{{text|truncate() }}
+          <a class="text-reset " href="{{ url }}" target="_blank">selengkapnya</a>
         </p>
         {% endif %}
         <h4 style="text-align: center" class="verdict">

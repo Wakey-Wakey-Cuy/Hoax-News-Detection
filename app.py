@@ -17,7 +17,7 @@ def news_feed():
 def about_us():
     return render_template('about_us.html')
 
-@app.route('/result', methods=['POST'])
+@app.route('/result', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
         url = request.form.get("url")
