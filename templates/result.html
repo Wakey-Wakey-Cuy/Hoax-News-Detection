@@ -5,20 +5,16 @@
   rel="stylesheet"
   media="screen,projection"
 />
-<div class="resized" style="text-align: center">
-  <div
-    id="hero"
-    class="container"
-    style="width: 1000px; height: 500px; margin-top: 4%; display: inline-block"
-  >
+<div class="resized">
+  <div id="hero" class="container hero">
     <!-- Title Start -->
-    <h1 class="mb-3" style="text-align: center">
+    <h1 class="mb-3 title-result">
       <b>
         Is {{ article_title }},
-        <span style="color: #606c38"> is a Hoax news?</span></b
+        <span class="text-primary-color"> is a Hoax news?</span></b
       >
     </h1>
-    <p class="lead mb-5" style="text-align: center">
+    <p class="mb-5 text-center">
       Disclaimer: The machine learning model does not have 100% accuracy. Please
       always practice fact checking on your own to verify the integrity of the
       news article.
@@ -26,90 +22,52 @@
     <!-- Title End -->
 
     <!-- Result Start -->
-    <div id="container" class="container">
-      <div
-        class="container card"
-        style="
-          padding-top: 2%;
-          padding-bottom: 2%;
-          padding-left: 2%;
-          padding-right: 2%;
-        "
-      >
+    <div id="container result-container" class="container">
+      <div class="container card result-card">
         {% if value == 'INVALID' %}
-        <h4 style="font-size: 20px; text-align: center">
+        <h5 class="invalid-info">
           <b>Invalid: Please check your URL again</b>
-        </h4>
+        </h5>
         {% else %}
-        <img src="{{ image }}" class="card-img-top" alt="..." />
+        <img src="{{ image }}" class="img-fluid card-img-top mt-3" alt="..." />
         <br />
-        <p class="lead mb-3" style="text-align: justify">
+        <p class="text-start mb-3 result-attribut-text">
           <b>Article Title: </b>{{ article_title }}
         </p>
-        <p class="lead mb-0" style="text-align: justify">
+        <p class="text-start mb-0 result-attribut-text">
           <b>Summary: </b>{{text|truncate() }}
           <a
-            class="text-reset"
+            class="text-blue text-decoration-none"
             href="{{ url }}"
             target="_blank"
-            style="color: #606c38"
-            >selengkapnya</a
+            >Selengkapnya</a
           >
         </p>
         {% endif %}
-        <h4 style="text-align: center" class="verdict">
-          Machine Learning Model Verdict:
-        </h4>
-        <div style="display: inline">
+        <h5 class="pt-3 text-center">Machine Learning Model Predict:</h5>
+        <div class="d-inline mb-3">
           {% if value == 'FAKE' %}
-          <button
-            style="
-              border-radius: 40px;
-              margin-bottom: 15px;
-              margin-top: 1%;
-              pointer-events: none;
-              cursor: default;
-            "
-            type="button"
-            class="btn btn-danger"
-          >
+          <button type="button" class="real-result-btn fake-result-btn">
             <b>{{value}}</b>
           </button>
           {% elif value == 'REAL' %}
-          <button
-            style="
-              border-radius: 40px;
-              margin-bottom: 15px;
-              margin-top: 1%;
-              pointer-events: none;
-              cursor: default;
-            "
-            type="button"
-            class="btn btn-success"
-          >
+          <button type="button" class="real-result-btn">
             <b>{{value}}</b>
           </button>
           {% else %}
-          <button
-            style="
-              border-radius: 40px;
-              margin-bottom: 25px;
-              margin-top: 1%;
-              pointer-events: none;
-              cursor: default;
-            "
-            type="button"
-            class="btn btn-warning"
-          >
+          <button type="button" class="real-result-btn fake-result-btn">
             <b>{{value}}</b>
           </button>
           {% endif %}
         </div>
       </div>
       <!-- End Result -->
-      <div style="text-align: left; padding: 1rem">
-        <a class="btn btn-outline-success" href="/" role="button">Go Back</a>
-      </div>
+      <button class="button-57 m-3" role="button">
+        <a class="text text-decoration-none" href="/"
+          ><i class="fa-solid fa-arrow-left-long"></i
+        ></a>
+        <span>Going Back ?</span>
+      </button>
     </div>
   </div>
   {% endblock contentB %}
