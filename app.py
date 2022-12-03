@@ -15,6 +15,7 @@ def home():
 def about_us():
     return render_template('about_us.html')
 
+# Predic For Input User (Home)
 @app.route('/result', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
@@ -70,6 +71,7 @@ def getImage(url):
     return image
 
 
+# Predic For News API (News Feed)
 newsapi=NewsApiClient(api_key='e1155f7ec34e4af690db87f96fec058a')
 
 loaded_model=joblib.load('model.sav')
