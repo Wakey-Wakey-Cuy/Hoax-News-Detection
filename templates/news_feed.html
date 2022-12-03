@@ -1,4 +1,6 @@
-{%extends 'base.html'%} {%block contentC%}
+{%extends 'base.html'%} {% block contentE %}
+<i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+{% endblock contentE %}{%block contentC%}
 <div id="container" class="container pt-2">
   <!-- Title Start -->
   <h1 class="mb-1 title-news-feed">
@@ -15,12 +17,12 @@
     <div class="col">
       <div class="card h-100">
         <img src="/static/assets/news1.jpeg" class="card-img-top" alt="..." />
-        <div class="card-body">
+        <div class="card-body"  id="kartu">
           <h5 class="card-title">
             <a
               class="text-dark text-decoration-none"
               href="https://www.cnnindonesia.com/nasional/20221126223106-20-879200/14-korban-hilang-gempa-cianjur-masih-dalam-pencarian"
-              target="_blank"
+              target="_blank" id="card-title"
               >14 Missing Cianjur Earthquake Victims Still Searching</a
             >
           </h5>
@@ -35,7 +37,7 @@
             <b>REAL</b>
           </button>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" id="footer">
           <small class="text-muted">Date Published: 27 Nov 2022</small>
         </div>
       </div>
@@ -43,12 +45,12 @@
     <div class="col">
       <div class="card h-100">
         <img src="/static/assets/news5.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
+        <div class="card-body" id="kartu1">
           <h5 class="card-title">
             <a
               class="text-dark text-decoration-none"
               href="https://www.liputan6.com/showbiz/read/229045/heboh-kiamat-2012"
-              target="_blank"
+              target="_blank" id="card-title1"
               >Heboh Kiamat 2012</a
             >
           </h5>
@@ -65,7 +67,7 @@
             <b>FAKE</b>
           </button>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" id="footer1">
           <small class="text-muted">Date Published: 22 Feb 2009</small>
         </div>
       </div>
@@ -74,12 +76,12 @@
     <div class="col">
       <div class="card h-100">
         <img src="/static/assets/news3.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
+        <div class="card-body" id="kartu2">
           <h5 class="card-title">
             <a
               class="text-dark text-decoration-none"
               href="https://edition.cnn.com/2022/11/26/football/german-soccer-fans-rainbow-colors-qatar-2022-world-cup-spt-intl/index.html"
-              target="_blank"
+              target="_blank" id="card-title2"
               >World Cup: Soccer fans stopped by security officials for wearing
               rainbow-colored items</a
             >
@@ -94,7 +96,7 @@
             <b>REAL</b>
           </button>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" id="footer2">
           <small class="text-muted">Date Published: 26 Nov 2022</small>
         </div>
       </div>
@@ -103,6 +105,7 @@
   <!-- News Feed Start Row End -->
 </div>
 
+<script src="{{url_for('static',filename='js/news_feed.js')}}"></script>
 <!-- Predict From Github Start -->
 <!-- {% for title in headlines %}
     {% if title[6] == 'INVALID' or title[5] == 'INVALID' %}
