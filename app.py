@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
-from newspaper import Article
-import joblib
+# from newspaper import Article
+# import joblib
 
 
 app = Flask(__name__)

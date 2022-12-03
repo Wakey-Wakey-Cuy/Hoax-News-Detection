@@ -1,7 +1,9 @@
-{%extends 'base.html'%} {%block contentD%}
+{%extends 'base.html'%} {% block contentE %}
+<i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+{% endblock contentE %}{%block contentD%}
 
 <!-- Section 1 Start -->
-<div class="bg-light py-4">
+<div class="py-4" id="section-1">
   <div class="container py-4">
     <div class="row h-100 align-items-center">
       <div class="col-lg-6 d-none d-lg-block">
@@ -21,7 +23,7 @@
 </div>
 <!-- Section 1 End -->
 
-<div class="bg-white py-5">
+<div class="py-5" id="section-2">
   <div class="container py-5">
     <!-- Section 2 Start -->
     <div class="row align-items-center mb-5">
@@ -81,7 +83,7 @@
 </div>
 
 <!-- Section 4 (Out Team) Start -->
-<div class="bg-light py-5">
+<div class="py-5" id="section-3">
   <div class="container py-5">
     <div class="row mb-4">
       <div class="col-lg-5">
@@ -92,7 +94,7 @@
     <div class="row text-center">
       <!-- Team Item Start -->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4">
+        <div class="rounded shadow-sm py-5 px-4">
           <img
             src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png"
             alt=""
@@ -129,7 +131,7 @@
 
       <!-- Team Item Start -->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4">
+        <div class="rounded shadow-sm py-5 px-4">
           <img
             src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png"
             alt=""
@@ -165,7 +167,7 @@
       <!-- Team Item End -->
       <!-- Team Item Start -->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4">
+        <div class="rounded shadow-sm py-5 px-4">
           <img
             src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png"
             alt=""
@@ -201,7 +203,7 @@
       <!-- Team Item End -->
       <!-- Team Item Start -->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4">
+        <div class="rounded shadow-sm py-5 px-4">
           <img
             src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png"
             alt=""
@@ -240,7 +242,7 @@
     <div class="row text-center">
       <!-- Team Item Start -->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4">
+        <div class="rounded shadow-sm py-5 px-4">
           <img
             src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png"
             alt=""
@@ -277,7 +279,7 @@
 
       <!-- Team Item Start -->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4">
+        <div class="rounded shadow-sm py-5 px-4">
           <img
             src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png"
             alt=""
@@ -313,7 +315,7 @@
       <!-- Team Item End -->
       <!-- Team Item Start -->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4">
+        <div class="rounded shadow-sm py-5 px-4">
           <img
             src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png"
             alt=""
@@ -349,7 +351,7 @@
       <!-- Team Item End -->
       <!-- Team Item Start -->
       <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4">
+        <div class="rounded shadow-sm py-5 px-4">
           <img
             src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png"
             alt=""
@@ -388,7 +390,7 @@
 </div>
 <!-- Section 4 (Out Team) Start -->
 
-<footer class="bg-light pb-5">
+<footer class="pb-5" id="footer">
   <div class="container text-center">
     <p class="font-italic text-muted mb-0">
       &copy; Copyrights
@@ -401,5 +403,7 @@
     </p>
   </div>
 </footer>
+
+<script src="{{url_for('static',filename='js/about.js')}}"></script>
 
 {%endblock contentD%}
