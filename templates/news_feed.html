@@ -1,139 +1,66 @@
 {%extends 'base.html'%} {% block contentE %}
 <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
 {% endblock contentE %}{%block contentC%}
-<div id="container" class="container pt-2">
+<div id="container-news" class="container pt-2">
   <!-- Title Start -->
   <h1 class="mb-1 title-news-feed">
     <b> News Feed</b>
   </h1>
   <p class="text-center mb-5">
-    Here are some examples of true and hoax news around the world
+    We use NewsAPI to fetch various news around the world. Therefore, this page will change every day <br />
+    Here are the prediction results from our model, for some news retrieved from NewsAPI
   </p>
   <!-- <span style="color:  #606C38"> NewsAPI </span> -->
   <!-- Title End -->
 
-  <!-- News Feed Start Row Start -->
-  <div class="row row-cols-1 row-cols-md-3">
-    <div class="col">
-      <div class="card h-100">
-        <img src="/static/assets/news1.jpeg" class="card-img-top" alt="..." />
-        <div class="card-body" id="kartu">
-          <h5 class="card-title">
-            <a
-              class="text-decoration-none"
-              href="https://www.cnnindonesia.com/nasional/20221126223106-20-879200/14-korban-hilang-gempa-cianjur-masih-dalam-pencarian"
-              target="_blank"
-              id="card-title1"
-              >14 Missing Cianjur Earthquake Victims Still Searching</a
-            >
-          </h5>
-          <p class="card-text">
-            <a>
-              Jakarta, CNN Indonesia -- The National Disaster Mitigation Agency
-              (BNPB) found eight missing victims of the Cianjur earthquake
-              today, Saturday (11/26).</a
-            >
-          </p>
-          <button type="button" class="btn-result">
-            <b>REAL</b>
-          </button>
-        </div>
-        <div class="card-footer" id="footer">
-          <small class="text-muted">Date Published: 27 Nov 2022</small>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="/static/assets/news5.jpg" class="card-img-top" alt="..." />
-        <div class="card-body" id="kartu1">
-          <h5 class="card-title">
-            <a
-              class="text-decoration-none"
-              href="https://www.liputan6.com/showbiz/read/229045/heboh-kiamat-2012"
-              target="_blank"
-              id="card-title2"
-              >Heboh Kiamat 2012</a
-            >
-          </h5>
-          <p class="card-text">
-            <a>
-              SEMUA akan berakhir. Pun alam semesta. Belakangan santer kabar
-              akhir zaman jatuh pada 21 Desember 2012. Mulai dari ilmuwan,
-              peramal, hingga selebriti ramai membicarakan angka cantik
-              21/12/2012.
-            </a>
-          </p>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for title in headlines %}
 
-          <button type="button" class="text-center btn-result btn-result-fake">
-            <b>FAKE</b>
-          </button>
-        </div>
-        <div class="card-footer" id="footer1">
-          <small class="text-muted">Date Published: 22 Feb 2009</small>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <img src="/static/assets/news3.jpg" class="card-img-top" alt="..." />
-        <div class="card-body" id="kartu2">
-          <h5 class="card-title">
-            <a
-              class="text-decoration-none"
-              href="https://edition.cnn.com/2022/11/26/football/german-soccer-fans-rainbow-colors-qatar-2022-world-cup-spt-intl/index.html"
-              target="_blank"
-              id="card-title3"
-              >World Cup: Soccer fans stopped by security officials for wearing
-              rainbow-colored items</a
-            >
-          </h5>
-          <p class="card-text">
-            <a>
-              Doha, Qatar (CNN) -The World Cup is well underway in Qatar, but
-              issues surrounding LGBTQ+ rights for the Gulf state.</a
-            >
-          </p>
-          <button type="button" class="btn-result">
-            <b>REAL</b>
-          </button>
-        </div>
-        <div class="card-footer" id="footer2">
-          <small class="text-muted">Date Published: 26 Nov 2022</small>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- News Feed Start Row End -->
-</div>
-
-<script src="{{url_for('static',filename='js/news_feed.js')}}"></script>
-<!-- Predict From Github Start -->
-<!-- {% for title in headlines %}
-    {% if title[6] == 'INVALID' or title[5] == 'INVALID' %}
-    {% else %}
         <div class="col">
-        <div class="card h-100" >
-          <img src={{ title[4] }} class="card-img-top" alt="..."  >
-          <div class="card-body">
-            <h5 class="card-title">{{ title[1] }}</h5>
-            <p class="card-text"><a href="{{ title[0] }}" style="color:black;  background-color: transparent; text-decoration: none;" target="_blank">{{ title[0] }}</a></p>
-            {% if (title[5]) == 'REAL' %}
-                <button style="border-radius:40px;pointer-events:none;cursor:default;" type="button" class="btn btn-success"><b>{{title[5]}}</b></button>
+          <div class="card h-100">
+            <img src={{ title[4] }} class="card-img-top" alt="..." />
+            <div class="card-body" id="kartu">
+              <h5 class="card-title">
+                <a
+                  class="text-decoration-none text-dark"
+                  href="{{ title[0] }}"
+                  target="_blank"
+                  id="card-title1"
+                  >{{ title[1] }}</a
+                >
+              </h5>
+
+              <div class="info-news">
+                <p class="card-text my-2">
+                  Source: {{ title[3] }}
+               </p>
+               <p class="my-2">
+                <span class="text-dark small-text" id="small-text">Link: </span> <a class="card-text text-decoration-none small-text my-1" href="{{ title[0] }}" target="_blank">
+                 {{ title[0] }}
+                 </a>
+               </p>
+                <p class=" small-text my-2" id="small-text">
+                  Description: {{ title[2] }}
+               </p>
+              </div>
+              {% if (title[5]) == 'REAL' %}
+                <button type="button" class="btn-result">
+                  <b>{{title[5]}}</b>
+                </button>
               {% elif (title[5]) == 'FAKE' %}
-                <button style="border-radius:40px;pointer-events:none;cursor:default;" type="button" class="btn btn-danger"><b>{{title[5]}}</b></button>
+                <button type="button" class="text-center btn-result btn-result-fake">
+                  <b>{{title[5]}}</b>
+                </button>
               {% endif %}
             </div>
-            <div class="card-footer">
-              <small class="text-muted">Date Published: {{title[6]}}</small>
+            <div class="card-footer" id="footer">
+              <small class="text-muted">Publish Date: {{title[6]}}</small>
             </div>
-        </div>
+          </div>
         </div>
 
-{% endif %}
-{% endfor %} -->
-<!-- Predict From Github Start -->
-<!-- </div>
-</div> -->
+{% endfor %}
+</div>
+</div>
+<script src="{{url_for('static',filename='js/news_feed.js')}}"></script>
 {%endblock contentC%}

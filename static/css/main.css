@@ -172,6 +172,12 @@ a.nav-link:hover:after {
   margin-top: 15px;
   text-align: center;
 }
+.small-text{
+  font-size: 13px;
+}
+.desk-news-feed{
+  font-weight: 300;
+}
 
 /* News Feed End */
 
