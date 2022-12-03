@@ -5,14 +5,15 @@ const subtitle = document.querySelectorAll("p");
 const card = document.getElementById("kartu");
 const card1 = document.getElementById("kartu1");
 const card2 = document.getElementById("kartu2");
-const cardTitle = document.getElementById("card-title");
-const cardTitle1 = document.getElementById("card-title1");
-const cardTitle2 = document.getElementById("card-title2");
+const cardTitle = document.getElementById("card-title1");
+const cardTitle1 = document.getElementById("card-title2");
+const cardTitle2 = document.getElementById("card-title3");
 const cardfooter = document.getElementById("footer");
 const cardfooter1 = document.getElementById("footer1");
 const cardfooter2 = document.getElementById("footer2");
 const fontNavbar = document.querySelectorAll("#font-navbar");
 const logo = document.getElementById("logo");
+
 toggle.addEventListener("click", function () {
   var theme;
   this.classList.toggle("bi-moon");
@@ -44,7 +45,7 @@ setInterval(() => {
     cardfooter1.style.backgroundColor = "#0a0a0a";
     cardfooter2.style.backgroundColor = "#0a0a0a";
     document.body.style.backgroundColor = "#000";
-    
+
     navbar.style.backgroundColor = "#555";
     fontNavbar[0].style.color = "#fff";
     fontNavbar[1].style.color = "#fff";
@@ -52,7 +53,6 @@ setInterval(() => {
     toggle.style.color = "#fff";
     logo.src = "/static/assets/logodarks.jpeg";
     logo.style.borderRadius = "10px";
-
   } else {
     card.style.backgroundColor = "#fff";
     titlehome[0].style.color = "#000000";
@@ -70,7 +70,7 @@ setInterval(() => {
     cardfooter1.style.backgroundColor = "#fff";
     cardfooter2.style.backgroundColor = "#fff";
     document.body.style.backgroundColor = "#fff";
-    
+
     navbar.style.backgroundColor = "#f1f3f5";
     fontNavbar[0].style.color = "rgba(0,0,0,.55)";
     fontNavbar[1].style.color = "rgba(0,0,0,.55)";

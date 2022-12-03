@@ -61,14 +61,18 @@
           {% endif %}
         </div>
       </div>
-      <!-- End Result -->
-      <button class="button-57 m-3" role="button">
-        <a class="text text-decoration-none" href="/"
-          ><i class="fa-solid fa-arrow-left-long"></i
-        ></a>
-        <span>Going Back ?</span>
-      </button>
+      <!-- Button Back -->
+      <div>
+        <a class="btn-back m-3" role="button" href="{{url_for('home')}}">
+          <span class="text text-decoration-none"
+            ><i class="fa-solid fa-arrow-left-long"></i
+          ></span>
+          <span class="back">Going Back ?</span>
+        </a>
+      </div>
+      <!-- Button Back -->
     </div>
+    <!-- End Result -->
   </div>
   {% endblock contentB %}
 </div>

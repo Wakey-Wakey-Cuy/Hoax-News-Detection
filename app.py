@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def home():
     return render_template('home.html')
-        
+
 @app.route('/newsfeed')
 def news_feed():
     return render_template('news_feed.html')
@@ -33,7 +33,7 @@ def result():
                 return render_template('result.html', article_title = title, text = text,image = image, url = url, value='FAKE')
         else:
             return render_template('home.html', error = 'This form cannot be empty')
-    else: 
+    else:
         return redirect('/')
 
 
@@ -42,7 +42,7 @@ def checkFakeNews(datas):
     data = [datas]
     loaded_model = joblib.load('model.sav')
     tfidf_vectorizer = joblib.load('vectorizer.sav')
-    
+
     tfidf_test = tfidf_vectorizer.transform(data)
     result = loaded_model.predict(tfidf_test)
 
@@ -64,7 +64,7 @@ def getText(url):
     article.parse()
     text = article.text
     return text
-    
+
 def getImage(url):
     article=Article(url)
     article.download()

@@ -282,13 +282,8 @@ ol li:before {
   font-size: 20px;
   text-align: center;
 }
-.btn-result {
-  border-radius: 40px;
-  pointer-events: none;
-  cursor: default;
-}
 
-/* CSS */
+/* Button Result CSS */
 .btn-result {
   all: unset;
   width: 100px;
@@ -306,6 +301,8 @@ ol li:before {
   justify-content: center;
   white-space: nowrap;
   user-select: none;
+  border-radius: 40px;
+
   -webkit-user-select: none;
   touch-action: manipulation;
 }
@@ -475,12 +472,9 @@ ol li:before {
 .real-result-btn:hover::after {
   background: #606c38;
 }
-/*
-<!-- HTML !-->
-<button class="button-57" role="button"><span class="text">Button 57</span><span>Alternate text</span></button> */
 
-/* CSS */
-.button-57 {
+/* Button Back CSS */
+.btn-back {
   position: relative;
   overflow: hidden;
   border: 1px solid #18181a;
@@ -502,7 +496,7 @@ ol li:before {
   justify-content: center;
 }
 
-.button-57 a {
+.btn-back a {
   position: relative;
   transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
   z-index: 10;
@@ -510,7 +504,7 @@ ol li:before {
   font-size: 20px;
 }
 
-.button-57 span {
+.btn-back .back {
   color: white;
   display: block;
   position: absolute;
@@ -525,7 +519,7 @@ ol li:before {
   line-height: 13px;
 }
 
-.button-57:after {
+.btn-back:after {
   content: "";
   position: absolute;
   bottom: -50%;
@@ -539,18 +533,18 @@ ol li:before {
   z-index: 50;
 }
 
-.button-57:hover:after {
+.btn-back:hover:after {
   transform-origin: bottom center;
   transform: skewY(9.3deg) scaleY(2);
 }
 
-.button-57:hover span:last-child {
+.btn-back:hover span:last-child {
   transform: translateX(-50%) translateY(-100%);
   opacity: 1;
   transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
 }
 
-/* Result CSS End*/
+/* Button Back End*/
 
 /* Footer CSS Start */
 footer {
