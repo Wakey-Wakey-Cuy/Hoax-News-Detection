@@ -31,7 +31,7 @@ body {
 header.masthead {
   position: relative;
   background-color: #ffffff;
-  background: url("/static/assets/background5.jpg") no-repeat center center
+  background: url("/static/assets/main-bg.jpg") no-repeat center center
     fixed;
   background-size: cover;
   padding-top: 8rem;
