@@ -4,8 +4,16 @@ if ($(window).width() < 400) {
 } else {
   $("input[type='text']").attr("placeholder", "Input The News URL...");
 }
-const toggle = document.getElementById("toggleDark");
+
+
+function loading(){
+   $("#loading").show();
+   masterhead.style.opacity ="0.7";
+   $("#content").hide();
+}
+
 const masterhead = document.getElementById("masterhead");
+const toggle = document.getElementById("toggleDark");
 const navbar = document.getElementById("navbar");
 const predictbtn = document.getElementById("button-addon2");
 const titlehome = document.querySelectorAll("header.masthead h1");
