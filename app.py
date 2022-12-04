@@ -16,7 +16,7 @@ def about_us():
     return render_template('about_us.html')
 
 # Predic For Input User (Home)
-@app.route('/result', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
         url = request.form.get("url")
@@ -26,10 +26,13 @@ def result():
             image = getImage(url)
             data = title + ' ' + text
             result = checkFakeNews(data)
-            if result:
-                return render_template('result.html', article_title = title, text = text, image = image, url = url, value='REAL')
+            if len(text) <=150:
+                return render_template('home.html',value='INVALID',url=url)
             else:
-                return render_template('result.html', article_title = title, text = text,image = image, url = url, value='FAKE')
+                if result:
+                    return render_template('result.html', article_title = title, text = text, image = image, url = url, value='REAL')
+                else:
+                    return render_template('result.html', article_title = title, text = text,image = image, url = url, value='FAKE')
         else:
             return render_template('home.html', error = 'This form cannot be empty')
     else:
