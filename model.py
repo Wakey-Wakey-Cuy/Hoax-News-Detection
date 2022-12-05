@@ -10,9 +10,6 @@ def predict(text):
     tresh = 0.55
     result = loaded_model.predict(text_vector)
 
-
-        
-    
     if proba[0] - proba[1] < tresh and proba[0]>0.5:
         if proba[0] - proba[1] <= tresh/2:
             return "REAL", 80 if round(100*proba[1]) < 80 else round(100*proba[1])
