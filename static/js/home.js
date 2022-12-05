@@ -4,22 +4,8 @@ if ($(window).width() < 400) {
 } else {
   $("input[type='text']").attr("placeholder", "Input The News URL...");
 }
-
-var loadingReal = document.getElementById("loading");
-loadingReal.style.display="none";
-function loading(){
-  $("#loading").show();
-  masterhead.style.opacity ="0.7";
-
-  setTimeout(()=>{
-    $("#loading").hide();
-    masterhead.style.opacity ="1";
-  },6000);
-}
-
-
-const masterhead = document.getElementById("masterhead");
 const toggle = document.getElementById("toggleDark");
+const masterhead = document.getElementById("masterhead");
 const navbar = document.getElementById("navbar");
 const predictbtn = document.getElementById("button-addon2");
 const titlehome = document.querySelectorAll("header.masthead h1");
@@ -43,7 +29,7 @@ setInterval(() => {
     titlehome[0].style.color = "#fff";
     predictbtn.style.backgroundColor = "#343A40";
     masterhead.style.background =
-      "url('/static/assets/main-bg-dark.webp') no-repeat center center fixed";
+      "url('/static/assets/image.webp') no-repeat center center fixed";
     navbar.style.backgroundColor = "#555";
     fontNavbar[0].style.color = "#fff";
     fontNavbar[1].style.color = "#fff";
@@ -53,7 +39,7 @@ setInterval(() => {
     logo.style.borderRadius = "10px";
   } else {
     masterhead.style.background = toggle.style.color =
-      "url('/static/assets/main-bg.jpg') no-repeat center center fixed";
+      "url('/static/assets/background5.jpg') no-repeat center center fixed";
     titlehome[0].style.color = "#606c38";
     navbar.style.backgroundColor = "#f1f3f5";
     predictbtn.style.backgroundColor = "#606c38";

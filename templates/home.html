@@ -19,8 +19,7 @@
         <!-- Form Input Start -->
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <div class="d-flex justify-content-center">
-            <div id="loading"></div>
-            <form action="/" id="form" method="POST" >
+            <form action="/result" id="form" method="POST">
               <div class="input-group input-group-lg mb-3">
                 <input
                   class="form-control input-diff"
@@ -32,12 +31,12 @@
                 />
                 <!-- Take Url Start -->
                 <div class="input-group-append">
+                  <!-- <input class="btn btn-primary btn-block btn-large predict-btn" style="height:3rem; border-radius:15px; margin-left: -30px; border:none; z-index:10;" value="{{request.form.url}} type="submit" id="button-addon2" value="Submit"></input> -->
                   <button
                     class="btn btn-block btn-large predict-btn text-white"
                     id="button-addon2"
                     type="submit"
                     name="submit"
-                    onclick="loading()"
                   >
                     <i class="fas fa-search"></i>
                   </button>
@@ -48,29 +47,6 @@
           </div>
         </div>
         <!-- Form Input End -->
-        {% if value == 'INVALID' %}
-        <!-- <div class="invalid">
-        </div>
-        <h6 style="font-size:20px;text-align:center;"><b><span class="text-danger">Invalid</span></b></h6>
-        <p class="text-danger">Because the text on {{ url }} is less than 150</p> -->
-
-        <div id="InfoBanner">
-          <span class="reversed reversedRight">
-            <span>
-              &#9888;
-            </span>
-          </span>
-          <span class="reversed reversedLeft">
-           <h1 class="text-light title-invalid-css">INVALID</h1>
-           <p class="text-invalid">Because the text on <br />
-            <a  class="text-decoration-none text-primary-color url-invalid" href="{{ url }}" target="_blank">{{ url }}</a>
-            <br/>is less than 150</p>
-          </span>
-        </div>
-
-
-
-        {% endif %}
       </div>
     </div>
   </header>
