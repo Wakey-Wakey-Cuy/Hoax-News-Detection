@@ -13,54 +13,53 @@
   <!-- <span style="color:  #606C38"> NewsAPI </span> -->
   <!-- Title End -->
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-  {% for title in headlines %}
+  <div id="card_container" class="row row-cols-1 row-cols-md-3 g-4">
+  {% for article in articles %}
 
-        <div class="col">
-          <div class="card h-100">
-            <img src={{ title[4] }} class="card-img-top" alt="Image from {{ title[1] }}" />
-            <div class="card-body" id="kartu">
-              <h5 class="card-title">
-                <a
-                  class="text-decoration-none text-dark"
-                  href="{{ title[0] }}"
-                  target="_blank"
-                  id="card-title1"
-                  >{{ title[1] }}</a
-                >
-              </h5>
+  <div class="col hide-card">
+    <div class="card h-100">
+      <img id="article_image" src="" class="card-img-top" alt="..." />
+      <div class="card-body" id="kartu">
+        <h5 class="card-title">
+          <a 
+            id="article_title"
+            class="text-decoration-none text-dark"
+            href=""
+            target="_blank"
+            id="card-title1"
+            ></a
+          >
+        </h5>
 
-              <div class="info-news">
-                <p class="card-text my-2">
-                  Source: {{ title[3] }}
-               </p>
-               <p class="my-2">
-                <span class="text-dark small-text" id="small-text">Link: </span> <a class="card-text text-decoration-none small-text my-1" href="{{ title[0] }}" target="_blank">
-                 {{ title[0] }}
-                 </a>
-               </p>
-                <p class=" small-text my-2" id="small-text">
-                  Description: {{ title[2] }}
-               </p>
-              </div>
-              {% if (title[5]) == 'REAL' %}
-                <button type="button" class="btn-result">
-                  <b>{{title[5]}}</b>
-                </button>
-              {% elif (title[5]) == 'FAKE' %}
-                <button type="button" class="text-center btn-result btn-result-fake">
-                  <b>{{title[5]}}</b>
-                </button>
-              {% endif %}
-            </div>
-            <div class="card-footer" id="footer">
-              <small class="text-muted">Publish Date: {{title[6]}}</small>
-            </div>
-          </div>
+        <div class="info-news">
+          <p id="article_sourceName" class="card-text my-2">
+            
+         </p>
+         <p class="my-2">
+          <span class="text-dark small-text" id="small-text">Link: </span> <a id="article_url" class="card-text text-decoration-none small-text my-1" href="" target="_blank">
+          
+           </a>
+         </p>
+          <p id="article_description" class=" small-text my-2" id="small-text">
+            
+         </p>
         </div>
+
+          <button id="article_result" type="button" class="text-center btn-result btn-result-unidentified">
+            <b></b>
+          </button>
+
+      </div>
+      <div class="card-footer" id="footer">
+        <small id="article_date" class="text-muted"></small>
+      </div>
+    </div>
+  </div>
 
 {% endfor %}
 </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="{{url_for('static',filename='js/news_feed.js')}}"></script>
+
 {%endblock contentC%}

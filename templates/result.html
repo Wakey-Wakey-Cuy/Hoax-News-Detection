@@ -46,17 +46,17 @@
         {% endif %}
         <h5 class="pt-3 text-center">Machine Learning Model Predict:</h5>
         <div class="d-inline mb-3">
-          {% if value == 'FAKE' %}
+          {% if value.upper() == 'FAKE' %}
           <button type="button" class="real-result-btn fake-result-btn">
-            <b>{{value}}</b>
+            <b>{{value.upper()+score}}</b>
           </button>
-          {% elif value == 'REAL' %}
+          {% elif value.upper() == 'REAL' %}
           <button type="button" class="real-result-btn">
-            <b>{{value}}</b>
+            <b>{{value.upper()+score}}</b>
           </button>
           {% else %}
           <button type="button" class="real-result-btn fake-result-btn">
-            <b>{{value}}</b>
+            <b>{{value.upper()}}</b>
           </button>
           {% endif %}
         </div>

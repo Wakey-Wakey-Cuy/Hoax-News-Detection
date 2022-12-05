@@ -12,7 +12,9 @@ body {
 .text-primary-color {
   color: #606c38;
 }
-
+.text-blud {
+  color: #90e0ef;
+}
 
 .input-diff {
   height: 3rem;
@@ -29,7 +31,7 @@ body {
 header.masthead {
   position: relative;
   background-color: #ffffff;
-  background: url("/static/assets/main-bg.jpg") no-repeat center center
+  background: url("/static/assets/background5.jpg") no-repeat center center
     fixed;
   background-size: cover;
   padding-top: 8rem;
@@ -163,20 +165,6 @@ a.nav-link:hover:after {
   border: 0;
   padding: 1rem;
   text-indent: 10px;
-}
-
-#loading {
-  display: none;
-  background: url("/static/assets/loading.gif") no-repeat;
-  cursor: wait;;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  height: 500px;
-  margin-top: -250px;
-  margin-left: -188px;
-  z-index: 100;
 }
 
 /* News Feed */
@@ -361,6 +349,17 @@ ol li:before {
   -webkit-backdrop-filter: blur(5px);
   border-radius: 50px;
 }
+
+.btn-result-unidentified::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #777d85;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
 
 .btn-result:hover::before {
   transform: translate(5%, 20%);
@@ -564,117 +563,6 @@ ol li:before {
 
 /* Button Back End*/
 
-/* Invalid Section */
-
-@keyframes slide {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: -120px 60px;
-  }
-}
-
-.text-invalid{
-  font-size: 14px;
-}
-.reversed {
-  display: inline-block;
-  padding: 0.3em;
-  padding-left: 0.3em;
-  margin-left: 0.8em;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1;
-  color: #fff;
-  font-size: 15px;
-  background-color:#ef5350;
-  padding: 15px;
-  font-size: 20px;
-}
-.reversed:before, .reversed:after {
-  content: '';
-  width: 0;
-  height: 0;
-  right: -0.8em;
-  position: absolute;
-  top: 0;
-  /* border-top: 0.8em solid #ef5350; */
-}
-.reversed:after {
-  top: auto;
-  bottom: 0;
-  border-top: none;
-  /* border-bottom: 0.8em solid #ef5350; */
-}
-.reversedRight:before, .reversedRight:after{
-  /* border-right: 0.8em solid transparent; */
-  right: -0.8em;
-}
-.reversedRight{
-  border-radius: 5px 0px 0px 5px;
-  animation: tilt 2s infinite;
-  padding: 61px 10px;
-}
-@keyframes tilt {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: 9px;
-  }
-  100% {
-    left: 0px;
-  }
-}
-.reversedLeft{
-  margin-left:15px;
-  border-radius: 0px 5px 5px 0px;
-}
-.reversedLeft:before, .reversedLeft:after {
-  content: '';
-  width: 0;
-  height: 0;
-  /* border-left: 0.8em solid transparent; */
-  left: -0.8em;
-  position: absolute;
-}
-.reversedLeft:after {
-  top: auto;
-  bottom: 0;
-  /* border-top: 0.8em solid #ef5350; */
-  border-bottom: none;
-}
-.reversedLeft:before {
-  bottom: auto;
-  top:0;
-  /* border-bottom: 0.8em solid #ef5350; */
-  border-top: none;
-}
-
-.bgAnimation{
-  background-color:#ef5350;
-  background-image: linear-gradient(
-    45deg,
-    #e57373 50%,
-    transparent 50%,
-    transparent 75%,
-    #e57373 75%,
-    #e57373
-  ),linear-gradient(
-    -45deg,
-    #e57373 50%,
-    transparent 50%,
-    transparent 75%,
-    #e57373 100%,
-    #e57373
-  );
-  background-size: 60px 60px;
-  animation: slide 4s infinite linear;
-}
-
-
 /* Footer CSS Start */
 footer {
   position: relative;
@@ -707,21 +595,6 @@ footer {
   .col {
     margin-top: 15px;
   }
-  #loading{
-    margin-left: -180px !important;
-  }
-}
-@media (max-width: 415px) {
-
-  .text-invalid{
-    font-size: 10px;
-  }
-  .reversedRight {
-    padding: 45px 10px !important;
-  }
-  .reversed{
-    padding: 10px;
-  }
 }
 @media (max-width: 480px) {
   .fa {
@@ -730,10 +603,6 @@ footer {
   .input-diff {
     width: 15rem !important;
   }
-  #loading{
-    margin-left: -175px !important;
-  }
-
 }
 @media (max-width: 320px) {
   .navbar-toggler {
@@ -742,18 +611,6 @@ footer {
   }
   .input-diff {
     width: 10rem !important;
-  }
-}
-@media (max-width: 280px) {
-  .text-invalid{
-    font-size: 8px;
-  }
-  .reversedRight {
-    padding: 30px 10px !important;
-  }
-  .reversed{
-    padding: 0px;
-    margin: 0px;
   }
 }
 @media (max-width: 240px) {
@@ -766,3 +623,7 @@ footer {
   }
 }
 /* Responsive End */
+
+.hide-card{
+  display: none;
+}

@@ -1,0 +1,9 @@
+# this project runs well using python version 3.10
+# install these libs using command "pip install -r requirements.txt" on virtual environment
+
+flask==2.2.2
+newsapi==0.1.1
+newsapi-python==0.2.6
+newspaper3k==0.2.8
+pandas==1.5.2
+sklearn==0.0
