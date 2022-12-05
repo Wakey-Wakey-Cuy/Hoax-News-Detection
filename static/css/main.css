@@ -578,6 +578,9 @@ ol li:before {
 .text-invalid{
   font-size: 14px;
 }
+.infoBanner{
+  margin-left: -15px;
+}
 .reversed {
   display: inline-block;
   padding: 0.3em;
