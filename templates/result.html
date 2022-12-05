@@ -1,20 +1,24 @@
-{%extends 'base.html'%} {% block contentB %}
+{%extends 'base.html'%} {% block contentE %}
+<i class="bi bi-brightness-high-fill toogleDark" id="toggleDark"></i>
+{% endblock contentE %}
+{% block contentB %}
 <link
   href="{{ url_for('static',filename='css/materialize.min.css') }}"
   type="text/css"
   rel="stylesheet"
   media="screen,projection"
 />
-<div class="resized">
+<div id="full-result">
+<div class="resized" id="resized">
   <div id="hero" class="container hero">
     <!-- Title Start -->
     <h1 class="mb-3 title-result">
-      <b>
+      <b class="title-result-page" id="title-result-page">
         Is {{ article_title }},
         <span class="text-primary-color"> a Hoax news?</span></b
       >
     </h1>
-    <p class="mb-5 text-center">
+    <p class="mb-5 text-center disclaimer" id="disclaimer">
       Disclaimer: The machine learning model does not have 100% accuracy. Please
       always practice fact checking on your own to verify the integrity of the
       news article.
@@ -74,5 +78,8 @@
     </div>
     <!-- End Result -->
   </div>
+</div>
+  <script src="{{url_for('static',filename='js/result.js')}}"></script>
+
   {% endblock contentB %}
 </div>
