@@ -50,7 +50,7 @@
         </div>
         <!-- Form Input End -->
         {% if value == 'INVALID' %}
-        <div id="InfoBanner">
+        <div id="InfoBanner" class="infoBanner">
           <span class="reversed reversedRight">
             <span>
               &#9888;
@@ -58,9 +58,9 @@
           </span>
           <span class="reversed reversedLeft">
            <h1 class="text-light title-invalid-css">INVALID</h1>
-           <p class="text-invalid">Because the text on <br />
+           <p class="text-invalid">Because the letters on <br />
             <a  class="text-decoration-none text-primary-color url-invalid" href="{{ url }}" target="_blank">{{ url }}</a>
-            <br/>is less than 150</p>
+            <br/>is less than 3000. <br /> This will make the wrong prediction for you</p>
           </span>
         </div>
         {% endif %}

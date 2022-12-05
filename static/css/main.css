@@ -615,7 +615,7 @@ ol li:before {
 .reversedRight{
   border-radius: 5px 0px 0px 5px;
   animation: tilt 2s infinite;
-  padding: 61px 10px;
+  padding: 69px 10px;
 }
 @keyframes tilt {
   0% {
@@ -710,6 +710,9 @@ footer {
   #loading{
     margin-left: -180px !important;
   }
+  .infoBanner{
+    margin-left: -10px;
+  }
 }
 @media (max-width: 415px) {
 
@@ -717,7 +720,7 @@ footer {
     font-size: 10px;
   }
   .reversedRight {
-    padding: 45px 10px !important;
+    padding: 49px 10px !important;
   }
   .reversed{
     padding: 10px;
@@ -732,6 +735,9 @@ footer {
   }
   #loading{
     margin-left: -175px !important;
+  }
+  .infoBanner{
+    margin-left: -20px;
   }
 
 }
@@ -749,7 +755,7 @@ footer {
     font-size: 8px;
   }
   .reversedRight {
-    padding: 30px 10px !important;
+    padding: 34px 10px !important;
   }
   .reversed{
     padding: 0px;
