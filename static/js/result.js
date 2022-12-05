@@ -5,6 +5,8 @@ const fullResult = document.getElementById("fullResult");
 const body = document.querySelector("body");
 const disclaimer = document.getElementById("disclaimer");
 const logo = document.getElementById("logo");
+const fontNavbar = document.querySelectorAll("#font-navbar");
+
 console.log(fullResult);
 toggle.addEventListener("click", function () {
     var theme;
@@ -29,6 +31,9 @@ setInterval(() => {
       toggle.style.color = "#fff";
       logo.src = "/static/assets/logodarks.jpeg";
       logo.style.borderRadius = "10px";
+      fontNavbar[0].style.color = "#fff";
+      fontNavbar[1].style.color = "#fff";
+      fontNavbar[2].style.color = "#fff";
     } else {
       titleResultPage.style.color = "#000";
       disclaimer.style.color = "#000";
@@ -36,5 +41,8 @@ setInterval(() => {
       navbar.style.backgroundColor = "#fff";
       toggle.style.color = "#000";
       logo.src = "/static/assets/newlogo.png";
+      fontNavbar[0].style.color = "#000";
+      fontNavbar[1].style.color = "#000";
+      fontNavbar[2].style.color = "#000";
     }
   }, 5);

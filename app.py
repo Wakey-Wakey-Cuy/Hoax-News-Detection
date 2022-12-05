@@ -11,7 +11,7 @@ def home():
 def about_us():
     return render_template('about_us.html')
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/result', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
         url = request.form.get("url")
@@ -21,8 +21,10 @@ def result():
             text = news['text']
             print(len(text))
             if(len(text) < 1000):
+                # return redirect('/home.html')
                 return render_template('home.html',value='INVALID',url=url)
             else:
+                redirect('/result')
                 return render_template('result.html', url = url, article_title = news['title'], text = news['text'], image = news['image'], value=news['pred_result'], score=f" {news['pred_score']}%")
         else:
             return render_template('home.html', error = 'This form cannot be empty')
