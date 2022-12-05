@@ -18,10 +18,13 @@ def result():
         url = request.form.get("url")
         if url:
             news = getArticlePredict(url)
-            # if result:
-            return render_template('result.html', url = url, article_title = news['title'], text = news['text'], image = news['image'], value=news['pred_result'], score=f" {news['pred_score']}%")
-            # else:
-            #     return render_template('result.html', url = url, article_title = news['title'], text = news['text'], image = news['image'], value=news['pred_result'])
+
+            text = news['text']
+
+            if(len(text) < 200):
+                return render_template('home.html',value='INVALID',url=url)
+            else:
+                return render_template('result.html', url = url, article_title = news['title'], text = news['text'], image = news['image'], value=news['pred_result'], score=f" {news['pred_score']}%")
         else:
             return render_template('home.html', error = 'This form cannot be empty')
     else:

@@ -19,6 +19,7 @@
         <!-- Form Input Start -->
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <div class="d-flex justify-content-center">
+            <div class="loading" id="loading"></div>
             <form action="/result" id="form" method="POST">
               <div class="input-group input-group-lg mb-3">
                 <input
@@ -37,6 +38,7 @@
                     id="button-addon2"
                     type="submit"
                     name="submit"
+                    onclick="loading()"
                   >
                     <i class="fas fa-search"></i>
                   </button>
@@ -47,6 +49,21 @@
           </div>
         </div>
         <!-- Form Input End -->
+        {% if value == 'INVALID' %}
+        <div id="InfoBanner">
+          <span class="reversed reversedRight">
+            <span>
+              &#9888;
+            </span>
+          </span>
+          <span class="reversed reversedLeft">
+           <h1 class="text-light title-invalid-css">INVALID</h1>
+           <p class="text-invalid">Because the text on <br />
+            <a  class="text-decoration-none text-primary-color url-invalid" href="{{ url }}" target="_blank">{{ url }}</a>
+            <br/>is less than 150</p>
+          </span>
+        </div>
+        {% endif %}
       </div>
     </div>
   </header>
