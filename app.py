@@ -11,7 +11,6 @@ def home():
 def about_us():
     return render_template('about_us.html')
 
-# Predic For Input User (Home)
 @app.route('/result', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
@@ -21,7 +20,7 @@ def result():
 
             text = news['text']
 
-            if(len(text) < 200):
+            if(len(text) < 3000):
                 return render_template('home.html',value='INVALID',url=url)
             else:
                 return render_template('result.html', url = url, article_title = news['title'], text = news['text'], image = news['image'], value=news['pred_result'], score=f" {news['pred_score']}%")
@@ -29,12 +28,6 @@ def result():
             return render_template('home.html', error = 'This form cannot be empty')
     else:
         return redirect('/')
-
-
-# @app.route('/newsfeed')
-# def news_feed():
-#     articles = getHeadlines()
-#     return render_template('news_feed.html', articles=articles)
 
 @app.route('/newsfeed')
 def news_feed():

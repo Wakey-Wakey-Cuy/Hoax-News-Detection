@@ -7,7 +7,7 @@ newsClient=NewsApiClient(api_key='7d125ba012bc447681da91239d255267')
 news_feed = newsClient.get_top_headlines( language='en',page_size=80)
 
 def getArticlePredict(url):
-    article = downloadArticle(url) 
+    article = downloadArticle(url)
     result = predict(article.text)
     return {'url':url,
             'title':article.title,
@@ -35,10 +35,10 @@ def getSpecifArticle(currentReal=0,currentFake=0, index=0, maxReal=0,maxFake=0):
         article['pred_score']= result[1]
         article['date'] = article['publishedAt'][0:10]
         print(i,len(news_feed), index, currentReal ,article['title'][:10])
-        
+
         if maxReal == 0 and maxFake ==0:
             return article, 0,0, i+1
-        
+
         if article['pred_result'].upper() == "FAKE" and currentFake < maxFake:
             return article, currentReal,currentFake+1, i+1
         elif article['pred_result'].upper() == "REAL" and currentReal < maxReal:
@@ -51,37 +51,3 @@ def getSpecifArticle(currentReal=0,currentFake=0, index=0, maxReal=0,maxFake=0):
         article['pred_score']= result[1]
         article['date'] = article['publishedAt'][0:10]
         return article, currentReal,currentFake, 20
-
-            
-
-
-
-# def getHeadlines():
-#     articles=[]
-#     top_headlines= newsClient.get_everything(q="politic OR politics OR biden OR donald trump OR war OR election", language='en',page_size=6)
-#     realAtc = []
-#     fakeAtc = []
-#     real_count = 0
-#     fake_count = 0
-#     maxEach = 6
-#     count = 0
-#     for article in top_headlines['articles']:
-#         article['pred_result']=predict(downloadArticle(article['url']).text)
-#         article['date'] = article['publishedAt'][0:10]
-#         count+=1
-#         print("===>>>", count, article['pred_result'])
-#         if article['pred_result'].upper() == "FAKE" and fake_count < maxEach:
-#             fake_count+=1
-#             fakeAtc.append(article)
-#         elif article['pred_result'].upper() == "REAL" and real_count < maxEach:
-#             real_count+=1
-#             realAtc.append(article)
-#         elif real_count == fake_count and real_count >= maxEach:
-#             break
-    
-        
-#     articles = realAtc + fakeAtc
-#     shuffle(articles)
-#     print("==== > ",len(top_headlines['articles']),real_count, fake_count)
-#     return articles
-
