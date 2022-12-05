@@ -194,6 +194,9 @@ a.nav-link:hover:after {
 /* News Feed End */
 
 /* About Us CSS Start */
+.toogleDark{
+  cursor: pointer;
+}
 .title-about-us {
   text-align: center;
 }
@@ -575,6 +578,7 @@ ol li:before {
   }
 }
 
+
 .text-invalid{
   font-size: 14px;
 }
@@ -618,7 +622,7 @@ ol li:before {
 .reversedRight{
   border-radius: 5px 0px 0px 5px;
   animation: tilt 2s infinite;
-  padding: 69px 10px;
+  padding: 61px 10px;
 }
 @keyframes tilt {
   0% {
@@ -723,7 +727,7 @@ footer {
     font-size: 10px;
   }
   .reversedRight {
-    padding: 49px 10px !important;
+    padding: 45px 10px !important;
   }
   .reversed{
     padding: 10px;
@@ -758,7 +762,7 @@ footer {
     font-size: 8px;
   }
   .reversedRight {
-    padding: 34px 10px !important;
+    padding: 30px 10px !important;
   }
   .reversed{
     padding: 0px;
