@@ -33,11 +33,11 @@ The project we created is a hoax news detection website, by simply entering the 
 
 
 ### Built With
-* ![Python](https://img.shields.io/badge/Python-306998?style=for-the-badge&logo=Flask)
+* ![Python](https://img.shields.io/badge/Python-306998?style=for-the-badge&logo=Python)
 * ![Flask](https://img.shields.io/badge/Flask-gray?style=for-the-badge&logo=Flask)
-* ![Bootstrap](https://img.shields.io/badge/Bootstrap-purple?style=for-the-badge&logo=Flask)
-* ![Javascript](https://img.shields.io/badge/Javascript-FFE873?style=for-the-badge&logo=Flask)
-* ![JQuery](https://img.shields.io/badge/JQuery-blue?style=for-the-badge&logo=Flask)
+* ![Bootstrap](https://img.shields.io/badge/Bootstrap-purple?style=for-the-badge&logo=Bootstrap)
+* ![Javascript](https://img.shields.io/badge/Javascript-FFE873?style=for-the-badge&logo=Javascript)
+* ![JQuery](https://img.shields.io/badge/JQuery-blue?style=for-the-badge&logo=JQuery)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
